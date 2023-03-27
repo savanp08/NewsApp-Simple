@@ -7,65 +7,17 @@ import axios from 'axios'
 
 const MainPage = () => {
 
-    const [news, setNews] = useState([{
-        title:'Prices of fuel rise to 143/Lr! Prices of fuel rise to 143/Lr! Prices of fuel rise to 143/Lr! Prices of fuel rise to 143/Lr!',
-        description:'with ongoing ukraine-russia war and the sanctions on russian oil exports , the fuels costs are increasing everyday',
-        publishedAt: '03-27-2023T00:12:00'
-    },
-    {
-        title:'Prices of fuel rise to 143/Lr!',
-        description:'with ongoing ukraine-russia war and the sanctions on russian oil exports , the fuels costs are increasing everyday',
-        publishedAt: '03-27-2023T00:12:00'
-    },
-    {
-        title:'Prices of fuel rise to 143/Lr!',
-        description:'with ongoing ukraine-russia war and the sanctions on russian oil exports , the fuels costs are increasing everyday',
-        publishedAt: '03-27-2023T00:12:00'
-    },
-    {
-        title:'Prices of fuel rise to 143/Lr!',
-        description:'with ongoing ukraine-russia war and the sanctions on russian oil exports , the fuels costs are increasing everyday',
-        publishedAt: '03-27-2023T00:12:00'
-    }
-    ,{
-        title:'Prices of fuel rise to 143/Lr!',
-        description:'with ongoing ukraine-russia war and the sanctions on russian oil exports , the fuels costs are increasing everyday',
-        publishedAt: '03-27-2023T00:12:00'
-    },
-    {
-        title:'Prices of fuel rise to 143/Lr!',
-        description:'with ongoing ukraine-russia war and the sanctions on russian oil exports , the fuels costs are increasing everyday',
-        publishedAt: '03-27-2023T00:12:00'
-    }
+    const [news, setNews] = useState([
 ]);
     const [category, setCategory] = useState('general');
     const [searchQuery, setSearchQuery] = useState('');
     const [fromDate, setFromDate] = useState('');
     const [toDate, setToDate] = useState('');
-    const [Data ,setData] = useState([{
-        title:'Prices of fuel rise to 143/Lr!',
-        description:'with ongoing ukraine-russia war and the sanctions on russian oil exports , the fuels costs are increasing everyday',
-        publishedAt: '03-27-2023T00:12:00'
-    },
-    {
-        title:'Prices of fuel rise to 143/Lr!',
-        description:'with ongoing ukraine-russia war and the sanctions on russian oil exports , the fuels costs are increasing everyday',
-        publishedAt: '03-27-2023T00:12:00'
-    }
-    ,{
-        title:'Prices of fuel rise to 143/Lr!',
-        description:'with ongoing ukraine-russia war and the sanctions on russian oil exports , the fuels costs are increasing everyday',
-        publishedAt: '03-27-2023T00:12:00'
-    },
-    {
-        title:'Prices of fuel rise to 143/Lr!',
-        description:'with ongoing ukraine-russia war and the sanctions on russian oil exports , the fuels costs are increasing everyday',
-        publishedAt: '03-27-2023T00:12:00'
-    }
+    const [Data ,setData] = useState([
 ]);
       async function ak()
       {
-        let response= await fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=bcb194e9e6184dd4b0fdfd7e2084ae1c");
+        let response= await fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=a7992cfeea9b4bf6b9693d74275f785b");
          setNews(await response.json());
         console.log(news);
       }
@@ -77,7 +29,7 @@ const MainPage = () => {
       useEffect(() => {
         const fetchNews = async () => {
           const response = await axios.get(
-            `https://newsapi.org/v2/top-headlines?country=in&category=${category}&q=${searchQuery}&from=${fromDate}&to=${toDate}&apiKey=bcb194e9e6184dd4b0fdfd7e2084ae1c`
+            `https://newsapi.org/v2/top-headlines?country=in&category=${category}&q=${searchQuery}&from=${fromDate}&to=${toDate}&apiKey=a7992cfeea9b4bf6b9693d74275f785b`
     
     
           );
