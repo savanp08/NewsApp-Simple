@@ -57,11 +57,12 @@ flex-flow: column nowrap;
     margin-right: 30px;
     margin-top: 40px;
     padding:10px;
+    cursor: pointer;
 }
 
 .Article-ImgWrapper{
-max-width: 130px;
-max-height: 150px;
+max-width: 290px;
+max-height: 250px;
 }
 
 .Article-TextWrapper{

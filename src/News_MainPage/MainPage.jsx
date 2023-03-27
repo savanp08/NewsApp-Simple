@@ -19,6 +19,7 @@ const MainPage = () => {
       {
         let response= await fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=a7992cfeea9b4bf6b9693d74275f785b");
          setNews(await response.json());
+         console.log(response);
         console.log(news);
       }
     useEffect(()=>{
@@ -59,12 +60,12 @@ const MainPage = () => {
         }
       },[news])
 
-      const Article = ({Title, Description,Time}) =>{
-        console.log(Title + "  "+ Description);
+      const Article = ({Title, Description,Time,article}) =>{
+        console.log(article);
         return(
-            <div className="Article_Wrapper">
+            <div className="Article_Wrapper" onClick={()=>{ window.open(article.url, '_blank').focus() }}>
                 <div className='Article-ImgWrapper'>
-                        
+                        <img src={article.urlToImage} className="Article-ImgWrapper"/>
     
                 </div>
                 <div className='Article-TextWrapper'>
@@ -116,7 +117,7 @@ return(
                {
                 Data.map((ele=>{
                     return(
-                    <Article Title={ele.title} Description={ele.description} Time={ele.publishedAt} />
+                    <Article Title={ele.title} Description={ele.description} Time={ele.publishedAt} article={ele} />
                     )
                 }))
                }
